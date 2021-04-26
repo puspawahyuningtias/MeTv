@@ -1,5 +1,6 @@
-package com.puspawahyuningtias.metv.ui.Movies
+package com.puspawahyuningtias.metv.ui.movies
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,6 +9,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.puspawahyuningtias.metv.R
 import com.puspawahyuningtias.metv.data.Movies
 import com.puspawahyuningtias.metv.databinding.ItemBinding
+import com.puspawahyuningtias.metv.ui.movies.detail.DetailMoviesActivity
 import java.util.ArrayList
 
 class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.ListViewHolder>(){
@@ -40,9 +42,15 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.ListViewHolder>(){
                 tvTahun.text = movies.tahun.toString()
                 Glide.with(itemView.context)
                         .load(movies.photo)
-                        .apply(RequestOptions.placeholderOf(R.drawable.ic_loading)
+                        .apply(
+                            RequestOptions.placeholderOf(R.drawable.ic_loading)
                                 .error(R.drawable.ic_error))
                         .into(imgItemPhoto)
+                itemView.setOnClickListener {
+                    val intent = Intent(itemView.context, DetailMoviesActivity::class.java)
+                    intent.putExtra(DetailMoviesActivity.EXTRA_MOVIES, movies.name)
+                    itemView.context.startActivity(intent)
+                }
             }
         }
     }

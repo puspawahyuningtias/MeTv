@@ -6,5 +6,4 @@ import com.puspawahyuningtias.metv.data.Movies
 
 class MoviesViewModel: ViewModel() {
     fun getMovies(): List<Movies> = DataFilm.generateMovies()
-
 }

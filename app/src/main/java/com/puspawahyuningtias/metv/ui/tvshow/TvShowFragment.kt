@@ -1,16 +1,13 @@
 package com.puspawahyuningtias.metv.ui.tvshow
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.puspawahyuningtias.metv.data.TvShow
 import com.puspawahyuningtias.metv.databinding.FragmentTvShowBinding
-import com.puspawahyuningtias.metv.ui.Movies.MoviesAdapter
-import com.puspawahyuningtias.metv.ui.Movies.MoviesViewModel
 
 class TvShowFragment : Fragment() {
     private lateinit var fragmentTvShowBinding: FragmentTvShowBinding

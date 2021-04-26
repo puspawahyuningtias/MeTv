@@ -8,6 +8,9 @@
     <string name="description">Description</string>
     <string name="tahun">Tahun</string>
     <string name="poster">Poster</string>
+    <string name="kategori">Kategori</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="judul">Judul</string>
     <string-array name="data_name">
         <item>Ahmad Dahlan</item>
         <item>Ahmad Yani</item>
