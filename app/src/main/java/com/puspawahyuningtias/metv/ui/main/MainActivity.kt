@@ -8,7 +8,6 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.puspawahyuningtias.metv.R
 import com.puspawahyuningtias.metv.databinding.ActivityMainBinding
-import com.puspawahyuningtias.metv.ui.SectionsPagerAdapter
 
 class MainActivity : AppCompatActivity() {
     companion object {

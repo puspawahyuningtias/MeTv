@@ -1,4 +1,4 @@
-package com.puspawahyuningtias.metv.ui
+package com.puspawahyuningtias.metv.ui.tvshow
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.puspawahyuningtias.metv.R
-import com.puspawahyuningtias.metv.databinding.FragmentMoviesBinding
+import com.puspawahyuningtias.metv.data.TvShow
 import com.puspawahyuningtias.metv.databinding.FragmentTvShowBinding
+import com.puspawahyuningtias.metv.ui.Movies.MoviesAdapter
+import com.puspawahyuningtias.metv.ui.Movies.MoviesViewModel
 
 class TvShowFragment : Fragment() {
     private lateinit var fragmentTvShowBinding: FragmentTvShowBinding
@@ -23,15 +24,15 @@ class TvShowFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (activity != null) {
-            val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[MoviesViewModel::class.java]
-            val courses = viewModel.getCourses()
-            val academyAdapter = ListItemAdapter()
-            academyAdapter.setCourses(courses)
+            val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[TvShowViewModel::class.java]
+            val tvShow = viewModel.getTvShow()
+            val tvShowAdapter = TvShowAdapter()
+            tvShowAdapter.setTvShow(tvShow)
 
             with(fragmentTvShowBinding.rvTvShow) {
                 layoutManager = LinearLayoutManager(context)
                 setHasFixedSize(true)
-                adapter = academyAdapter
+                adapter = tvShowAdapter
             }
         }
     }

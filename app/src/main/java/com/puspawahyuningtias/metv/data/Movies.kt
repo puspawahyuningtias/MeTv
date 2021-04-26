@@ -1,4 +1,4 @@
-package com.puspawahyuningtias.metv.ui
+package com.puspawahyuningtias.metv.data
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
