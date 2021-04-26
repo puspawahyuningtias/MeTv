@@ -7,6 +7,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.puspawahyuningtias.metv.R
+import com.puspawahyuningtias.metv.databinding.ActivityMainBinding
 import com.puspawahyuningtias.metv.ui.SectionsPagerAdapter
 
 class MainActivity : AppCompatActivity() {
@@ -17,9 +18,13 @@ class MainActivity : AppCompatActivity() {
             R.string.tab_tv_show
         )
     }
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
         val sectionsPagerAdapter = SectionsPagerAdapter(this)
         val viewPager: ViewPager2 = findViewById(R.id.view_pager)
         viewPager.adapter = sectionsPagerAdapter
