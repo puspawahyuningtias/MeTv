@@ -37,6 +37,7 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.ListViewHolder>(){
             with(binding) {
                 tvItemName.text = movies.name
                 tvItemDescription.text = movies.description
+                tvTahun.text = movies.tahun.toString()
                 Glide.with(itemView.context)
                         .load(movies.photo)
                         .apply(RequestOptions.placeholderOf(R.drawable.ic_loading)

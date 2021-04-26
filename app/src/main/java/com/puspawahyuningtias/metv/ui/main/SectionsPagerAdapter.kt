@@ -6,7 +6,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.puspawahyuningtias.metv.ui.Movies.MoviesFragment
 import com.puspawahyuningtias.metv.ui.tvshow.TvShowFragment
 
-class SectionsPagerAdapter (activity: AppCompatActivity) : FragmentStateAdapter(activity){
+class SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
     override fun createFragment(position: Int): Fragment {
         var fragment: Fragment? = null
         when (position) {

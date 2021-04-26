@@ -6,6 +6,8 @@
     <string name="tab_tv_show">Tv Show</string>
     <string name="title">Title</string>
     <string name="description">Description</string>
+    <string name="tahun">Tahun</string>
+    <string name="poster">Poster</string>
     <string-array name="data_name">
         <item>Ahmad Dahlan</item>
         <item>Ahmad Yani</item>
