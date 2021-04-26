@@ -6,29 +6,42 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.puspawahyuningtias.metv.R
 import com.puspawahyuningtias.metv.databinding.ItemBinding
+import java.util.ArrayList
 
-class ListItemAdapter(private val listItem: ArrayList<Movies>) : RecyclerView.Adapter<ListItemAdapter.ListViewHolder>(){
-    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {
-        val binding = ItemBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
-        return ListViewHolder(binding)
+class ListItemAdapter : RecyclerView.Adapter<ListItemAdapter.ListViewHolder>(){
+    private var listCourses = ArrayList<Movies>()
+
+    fun setCourses(courses: List<Movies>?) {
+        if (courses == null) return
+        this.listCourses.clear()
+        this.listCourses.addAll(courses)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
+        val itemsAcademyBinding = ItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ListViewHolder(itemsAcademyBinding)
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        holder.bind(listItem[position])
+        val course = listCourses[position]
+        holder.bind(course)
     }
 
-    override fun getItemCount(): Int = listItem.size
+    override fun getItemCount(): Int = listCourses.size
 
-    inner class ListViewHolder(private val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
+
+    class ListViewHolder(private val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(movies: Movies) {
-            with(binding){
-                Glide.with(itemView.context)
-                    .load(movies.photo)
-                    .apply(RequestOptions().override(55, 55))
-                    .into(imgItemPhoto)
+            with(binding) {
                 tvItemName.text = movies.name
                 tvItemDescription.text = movies.description
+                Glide.with(itemView.context)
+                        .load(movies.photo)
+                        .apply(RequestOptions.placeholderOf(R.drawable.ic_loading)
+                                .error(R.drawable.ic_error))
+                        .into(imgItemPhoto)
             }
         }
     }
