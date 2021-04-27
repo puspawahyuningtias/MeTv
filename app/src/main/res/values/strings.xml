@@ -11,6 +11,7 @@
     <string name="kategori">Kategori</string>
     <string name="deskripsi">Deskripsi</string>
     <string name="judul">Judul</string>
+    <string name="deskripsi_singkat">Deskripsi Singkat :</string>
     <string-array name="data_name">
         <item>Ahmad Dahlan</item>
         <item>Ahmad Yani</item>

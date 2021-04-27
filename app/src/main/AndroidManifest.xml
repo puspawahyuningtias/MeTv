@@ -15,6 +15,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.puspawahyuningtias.metv.ui.main.MainActivity" />
         </activity>
+        <activity android:name=".ui.tvshow.detail.DetailTvShowActivity"
+            android:parentActivityName="com.puspawahyuningtias.metv.ui.main.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puspawahyuningtias.metv.ui.main.MainActivity" />
+        </activity>
         <activity
             android:name=".ui.splash.SplashScreenActivity"
             android:screenOrientation="portrait"

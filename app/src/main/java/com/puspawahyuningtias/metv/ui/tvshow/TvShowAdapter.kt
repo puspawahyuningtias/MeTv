@@ -1,5 +1,6 @@
 package com.puspawahyuningtias.metv.ui.tvshow
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,6 +9,8 @@ import com.bumptech.glide.request.RequestOptions
 import com.puspawahyuningtias.metv.R
 import com.puspawahyuningtias.metv.data.TvShow
 import com.puspawahyuningtias.metv.databinding.ItemBinding
+import com.puspawahyuningtias.metv.ui.movies.detail.DetailMoviesActivity
+import com.puspawahyuningtias.metv.ui.tvshow.detail.DetailTvShowActivity
 import java.util.ArrayList
 
 class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.ListViewHolder>(){
@@ -33,16 +36,21 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.ListViewHolder>(){
 
 
     class ListViewHolder(private val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(TvShow: TvShow) {
+        fun bind(tvShow: TvShow) {
             with(binding) {
-                tvItemName.text = TvShow.name
-                tvItemDescription.text = TvShow.description
-                tvTahun.text = TvShow.tahun.toString()
+                tvItemName.text = tvShow.name
+                tvItemDescription.text = tvShow.description
+                tvTahun.text = tvShow.tahun.toString()
                 Glide.with(itemView.context)
-                        .load(TvShow.photo)
+                        .load(tvShow.photo)
                         .apply(RequestOptions.placeholderOf(R.drawable.ic_loading)
                                 .error(R.drawable.ic_error))
                         .into(imgItemPhoto)
+                itemView.setOnClickListener {
+                    val intent = Intent(itemView.context, DetailTvShowActivity::class.java)
+                    intent.putExtra(DetailTvShowActivity.EXTRA_TVSHOW, tvShow.name)
+                    itemView.context.startActivity(intent)
+                }
             }
         }
     }
