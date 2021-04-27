@@ -126,57 +126,57 @@ object DataFilm {
         )
         tvShow.add(
             TvShow(
-                "A Star Is Born",
-                2010,
-                "",
+                "Naruto Shippuden the Movie",
+                2007,
+                "Demons that once almost destroyed the world, are revived by someone. To prevent the world from being destroyed, the demon has to be sealed and the only one who can do it is the shrine maiden Shion from the country of demons, who has two powers; one is sealing demons and the other is predicting the deaths of humans. This time Naruto's mission is to guard Shion, but she predicts Naruto's death. The only way to escape it, is to get away from Shion, which would leave her unguarded, then the demon, whose only goal is to kill Shion will do so, thus meaning the end of the world. Naruto decides to challenge this \"prediction of death.\"",
                 R.drawable.poster_naruto_shipudden
             )
         )
         tvShow.add(
             TvShow(
-                "A Star Is Born",
-                2010,
-                "",
+                "Hanna",
+                2019,
+                "This thriller and coming-of-age drama follows the journey of an extraordinary young girl as she evades the relentless pursuit of an off-book CIA agent and tries to unearth the truth behind who she is. Based on the 2011 Joe Wright film.",
                 R.drawable.poster_hanna
             )
         )
         tvShow.add(
             TvShow(
-                "A Star Is Born",
-                2010,
-                "",
+                "Grey's Anatomy",
+                2005,
+                "Ikuti kehidupan pribadi dan profesional sekelompok dokter di Rumah Sakit Gray Sloan Memorial di Seattle.",
                 R.drawable.poster_grey_anatomy
             )
         )
         tvShow.add(
             TvShow(
-                "A Star Is Born",
-                2010,
-                "",
+                "NCIS",
+                2003,
+                "From murder and espionage to terrorism and stolen submarines, a team of special agents investigates any crime that has a shred of evidence connected to Navy and Marine Corps personnel, regardless of rank or position.",
                 R.drawable.poster_ncis
             )
         )
         tvShow.add(
             TvShow(
-                "A Star Is Born",
-                2010,
-                "",
+                "Supergirl",
+                2015,
+                "Twenty-four-year-old Kara Zor-El, who was taken in by the Danvers family when she was 13 after being sent away from Krypton, must learn to embrace her powers after previously hiding them. The Danvers teach her to be careful with her powers, until she has to reveal them during an unexpected disaster, setting her on her journey of heroism.",
                 R.drawable.poster_supergirl
             )
         )
         tvShow.add(
             TvShow(
-                "A Star Is Born",
-                2010,
-                "",
+                "Supernatural",
+                2005,
+                "Dua bersaudara mencari ayah mereka yang hilang, pria yang melatih mereka untuk menjadi prajurit melawan kejahatan supernatural",
                 R.drawable.poster_supernatural
             )
         )
         tvShow.add(
             TvShow(
-                "A Star Is Born",
-                2010,
-                "",
+                "The Simpsons",
+                1989,
+                "Bertempat di Springfield, kota rata-rata di Amerika, pertunjukan ini berfokus pada kejenakaan dan petualangan sehari-hari keluarga Simpson; Homer, Marge, Bart, Lisa dan Maggie, serta ribuan pemain virtual. Sejak awal, serial ini telah menjadi ikon budaya pop, menarik ratusan selebriti menjadi bintang tamu. Acara ini juga menjadi terkenal karena satirnya yang tak kenal takut terhadap kehidupan politik, media, dan Amerika secara umum.",
                 R.drawable.poster_the_simpson
             )
         )
