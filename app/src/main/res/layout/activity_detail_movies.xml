@@ -24,7 +24,8 @@
         android:text="@string/judul"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:textAlignment="center"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
