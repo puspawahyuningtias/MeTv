@@ -1,4 +1,4 @@
-package com.puspawahyuningtias.metv.ui.Movies
+package com.puspawahyuningtias.metv.ui.movies
 
 import androidx.lifecycle.ViewModel
 import com.puspawahyuningtias.metv.data.DataFilm

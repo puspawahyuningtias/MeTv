@@ -1,4 +1,4 @@
-package com.puspawahyuningtias.metv.ui.Movies
+package com.puspawahyuningtias.metv.ui.movies
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.puspawahyuningtias.metv.databinding.FragmentMoviesBinding
-import com.puspawahyuningtias.metv.ui.movies.MoviesAdapter
 
 class MoviesFragment : Fragment() {
     private lateinit var fragmentMoviesBinding: FragmentMoviesBinding
