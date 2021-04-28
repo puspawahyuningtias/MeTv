@@ -2,8 +2,10 @@ package com.puspawahyuningtias.metv.data
 
 import com.puspawahyuningtias.metv.R
 
+import java.util.ArrayList
+
 object DataFilm {
-    fun generateMovies(): List<Movies> {
+    fun generateMovies(): ArrayList<Movies> {
         val movies = ArrayList<Movies>()
 
         movies.add(
