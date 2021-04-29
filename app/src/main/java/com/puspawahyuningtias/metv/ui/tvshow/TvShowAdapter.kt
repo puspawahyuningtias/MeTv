@@ -40,7 +40,7 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.ListViewHolder>(){
             with(binding) {
                 tvItemName.text = tvShow.name
                 tvItemDescription.text = tvShow.description
-                tvTahun.text = tvShow.tahun.toString()
+                tvItemTahun.text = tvShow.tahun
                 Glide.with(itemView.context)
                         .load(tvShow.photo)
                         .apply(RequestOptions.placeholderOf(R.drawable.ic_loading)

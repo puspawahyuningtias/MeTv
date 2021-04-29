@@ -40,7 +40,7 @@ class DetailTvShowActivity : AppCompatActivity() {
     private fun populateTvShow(tvShow: TvShow) {
         supportActionBar?.title = tvShow.name
         binding.tvJudul.text = tvShow.name
-        binding.tvTahun.text = tvShow.tahun.toString()
+        binding.tvTahun.text = tvShow.tahun
         binding.tvDeskripsi.text = tvShow.description
         binding.tvGenre.text = tvShow.genre
         Glide.with(this)
