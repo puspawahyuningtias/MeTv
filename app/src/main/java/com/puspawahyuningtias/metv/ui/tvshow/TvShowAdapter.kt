@@ -38,7 +38,7 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.ListViewHolder>(){
     class ListViewHolder(private val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(tvShow: TvShow) {
             with(binding) {
-                tvItemName.text = tvShow.name
+                tvItemName.text = tvShow.judul
                 tvItemDescription.text = tvShow.description
                 tvItemTahun.text = tvShow.tahun
                 Glide.with(itemView.context)
@@ -48,7 +48,7 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.ListViewHolder>(){
                         .into(imgItemPhoto)
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, DetailTvShowActivity::class.java)
-                    intent.putExtra(DetailTvShowActivity.EXTRA_TVSHOW, tvShow.name)
+                    intent.putExtra(DetailTvShowActivity.EXTRA_TVSHOW, tvShow.judul)
                     itemView.context.startActivity(intent)
                 }
             }

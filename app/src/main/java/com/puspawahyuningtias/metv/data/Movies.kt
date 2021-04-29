@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 data class Movies(
-    var name: String,
+    var judul: String,
     var tahun: String,
     var genre: String,
     var description: String,

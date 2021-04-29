@@ -29,20 +29,20 @@ class DetailMoviesActivity : AppCompatActivity() {
 
         val extras = intent.extras
         if (extras != null) {
-            val name = extras.getString(EXTRA_MOVIES)
-            if (name != null) {
-                viewModel.setSelectedMovies(name)
+            val judul = extras.getString(EXTRA_MOVIES)
+            if (judul != null) {
+                viewModel.setSelectedMovies(judul)
                 populateMovies(viewModel.getMovies())
             }
         }
     }
 
     private fun populateMovies(movies: Movies) {
-        supportActionBar?.title = movies.name
-        binding.tvJudul.text = movies.name
-        binding.tvTahun.text = movies.tahun.toString()
-        binding.tvDeskripsi.text = movies.description
-        binding.tvGenre.text = movies.genre
+        supportActionBar?.title = movies.judul
+        binding.tvMoviesJudul.text = movies.judul
+        binding.tvMoviesTahun.text = movies.tahun
+        binding.tvMoviesDeskripsi.text = movies.description
+        binding.tvMoviesGenre.text = movies.genre
         Glide.with(this)
             .load(movies.photo)
             .transform(RoundedCorners(20))
@@ -50,7 +50,7 @@ class DetailMoviesActivity : AppCompatActivity() {
                 RequestOptions.placeholderOf(R.drawable.ic_loading)
                     .error(R.drawable.ic_error)
             )
-            .into(binding.ivPoster)
+            .into(binding.ivMoviesPoster)
 
     }
 

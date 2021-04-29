@@ -37,7 +37,7 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.ListViewHolder>(){
     class ListViewHolder(private val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(movies: Movies) {
             with(binding) {
-                tvItemName.text = movies.name
+                tvItemName.text = movies.judul
                 tvItemDescription.text = movies.description
                 tvItemTahun.text = movies.tahun
                 Glide.with(itemView.context)
@@ -48,7 +48,7 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.ListViewHolder>(){
                         .into(imgItemPhoto)
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, DetailMoviesActivity::class.java)
-                    intent.putExtra(DetailMoviesActivity.EXTRA_MOVIES, movies.name)
+                    intent.putExtra(DetailMoviesActivity.EXTRA_MOVIES, movies.judul)
                     itemView.context.startActivity(intent)
                 }
             }

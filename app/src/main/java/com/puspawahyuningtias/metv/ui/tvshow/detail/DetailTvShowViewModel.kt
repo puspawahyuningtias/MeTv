@@ -5,17 +5,17 @@ import com.puspawahyuningtias.metv.data.DataFilm
 import com.puspawahyuningtias.metv.data.TvShow
 
 class DetailTvShowViewModel: ViewModel()  {
-    private lateinit var name: String
+    private lateinit var judul: String
 
-    fun setSelectedTvShow(courseId: String) {
-        this.name = courseId
+    fun setSelectedTvShow(judul: String) {
+        this.judul = judul
     }
 
     fun getTvShow(): TvShow {
         lateinit var tvShow: TvShow
         val dataTvShow = DataFilm.generateTvShow()
         for (dataMovie in dataTvShow) {
-            if (dataMovie.name == name) {
+            if (dataMovie.judul == judul) {
                 tvShow = dataMovie
             }
         }

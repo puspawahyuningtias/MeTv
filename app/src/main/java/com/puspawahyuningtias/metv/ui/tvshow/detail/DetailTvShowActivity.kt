@@ -29,20 +29,20 @@ class DetailTvShowActivity : AppCompatActivity() {
 
         val extras = intent.extras
         if (extras != null) {
-            val name = extras.getString(EXTRA_TVSHOW)
-            if (name != null) {
-                viewModel.setSelectedTvShow(name)
+            val judul = extras.getString(EXTRA_TVSHOW)
+            if (judul != null) {
+                viewModel.setSelectedTvShow(judul)
                 populateTvShow(viewModel.getTvShow())
             }
         }
     }
 
     private fun populateTvShow(tvShow: TvShow) {
-        supportActionBar?.title = tvShow.name
-        binding.tvJudul.text = tvShow.name
-        binding.tvTahun.text = tvShow.tahun
-        binding.tvDeskripsi.text = tvShow.description
-        binding.tvGenre.text = tvShow.genre
+        supportActionBar?.title = tvShow.judul
+        binding.tvTvshowJudul.text = tvShow.judul
+        binding.tvTvshowTahun.text = tvShow.tahun
+        binding.tvTvshowDeskripsi.text = tvShow.description
+        binding.tvTvshowGenre.text = tvShow.genre
         Glide.with(this)
             .load(tvShow.photo)
             .transform(RoundedCorners(20))
@@ -50,7 +50,7 @@ class DetailTvShowActivity : AppCompatActivity() {
                 RequestOptions.placeholderOf(R.drawable.ic_loading)
                     .error(R.drawable.ic_error)
             )
-            .into(binding.ivPoster)
+            .into(binding.ivTvshowPoster)
 
     }
 
