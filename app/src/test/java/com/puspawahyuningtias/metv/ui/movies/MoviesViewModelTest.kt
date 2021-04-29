@@ -1,12 +1,12 @@
 package com.puspawahyuningtias.metv.ui.movies
 
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
+import org.junit.Before
 import org.junit.Test
 
-import org.junit.Assert.*
-import org.junit.Before
-
 class MoviesViewModelTest {
-    private lateinit var  viewModel: MoviesViewModel
+    private lateinit var viewModel: MoviesViewModel
 
     @Before
     fun setUp() {
@@ -14,7 +14,7 @@ class MoviesViewModelTest {
     }
 
     @Test
-    fun getCourses() {
+    fun getMovies() {
         val movies = viewModel.getMovies()
         assertNotNull(movies)
         assertEquals(10, movies.size)

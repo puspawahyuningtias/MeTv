@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
             R.string.tab_tv_show
         )
     }
+
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

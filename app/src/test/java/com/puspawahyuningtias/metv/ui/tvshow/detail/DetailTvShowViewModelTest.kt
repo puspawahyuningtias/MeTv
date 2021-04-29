@@ -1,28 +1,28 @@
 package com.puspawahyuningtias.metv.ui.tvshow.detail
 
 import com.puspawahyuningtias.metv.data.DataFilm
-import com.puspawahyuningtias.metv.ui.movies.detail.DetailMoviesViewModel
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Test
 
-class DetailTvShowViewModelTest{
+class DetailTvShowViewModelTest {
     private lateinit var viewModel: DetailTvShowViewModel
     private val dataTvShow = DataFilm.generateTvShow()[0]
-    private val name = dataTvShow.name
+    private val judul = dataTvShow.judul
 
     @Before
     fun setUp() {
         viewModel = DetailTvShowViewModel()
-        viewModel.setSelectedTvShow(name)
+        viewModel.setSelectedTvShow(judul)
     }
 
     @Test
     fun getTvShow() {
-        viewModel.setSelectedTvShow(dataTvShow.name)
+        viewModel.setSelectedTvShow(dataTvShow.judul)
         val tvShow = viewModel.getTvShow()
         assertNotNull(tvShow)
-        assertEquals(dataTvShow.name, tvShow.name)
+        assertEquals(dataTvShow.judul, tvShow.judul)
         assertEquals(dataTvShow.description, tvShow.description)
         assertEquals(dataTvShow.photo, tvShow.photo)
         assertEquals(dataTvShow.tahun, tvShow.tahun)

@@ -1,8 +1,7 @@
 package com.puspawahyuningtias.metv.data
 
 import com.puspawahyuningtias.metv.R
-
-import java.util.ArrayList
+import java.util.*
 
 object DataFilm {
     fun generateMovies(): ArrayList<Movies> {

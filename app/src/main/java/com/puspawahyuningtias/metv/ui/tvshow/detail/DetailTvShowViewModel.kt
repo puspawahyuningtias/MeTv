@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.puspawahyuningtias.metv.data.DataFilm
 import com.puspawahyuningtias.metv.data.TvShow
 
-class DetailTvShowViewModel: ViewModel()  {
+class DetailTvShowViewModel : ViewModel() {
     private lateinit var judul: String
 
     fun setSelectedTvShow(judul: String) {

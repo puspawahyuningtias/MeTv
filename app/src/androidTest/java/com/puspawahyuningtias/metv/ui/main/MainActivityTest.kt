@@ -12,7 +12,7 @@ import com.puspawahyuningtias.metv.data.DataFilm
 import org.junit.Rule
 import org.junit.Test
 
-class MainActivityTest{
+class MainActivityTest {
     private val dataMovie = DataFilm.generateMovies()
     private val dataTvShow = DataFilm.generateTvShow()
 
@@ -22,11 +22,21 @@ class MainActivityTest{
     @Test
     fun loadMovies() {
         onView(withId(R.id.rv_movies)).check(matches(isDisplayed()))
-        onView(withId(R.id.rv_movies)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(dataMovie.size))
+        onView(withId(R.id.rv_movies)).perform(
+            RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(
+                dataMovie.size
+            )
+        )
     }
+
     @Test
     fun loadDetailFilm() {
-        onView(withId(R.id.rv_movies)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+        onView(withId(R.id.rv_movies)).perform(
+            RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
+                0,
+                click()
+            )
+        )
         onView(withId(R.id.tv_movies_deskripsi)).check(matches(isDisplayed()))
         onView(withId(R.id.tv_movies_deskripsi)).check(matches(withText(dataMovie[0].description)))
         onView(withId(R.id.tv_movies_judul)).check(matches(isDisplayed()))
@@ -36,17 +46,27 @@ class MainActivityTest{
         onView(withId(R.id.tv_movies_tahun)).check(matches(isDisplayed()))
         onView(withId(R.id.tv_movies_tahun)).check(matches(withText(dataMovie[0].tahun)))
     }
+
     @Test
     fun loadTvShow() {
         onView(withText("TV SHOW")).perform(click())
         onView(withId(R.id.rv_tv_show)).check(matches(isDisplayed()))
-        onView(withId(R.id.rv_tv_show)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(dataMovie.size))
+        onView(withId(R.id.rv_tv_show)).perform(
+            RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(
+                dataMovie.size
+            )
+        )
     }
 
     @Test
     fun loadDetailTvShow() {
         onView(withText("TV SHOW")).perform(click())
-        onView(withId(R.id.rv_tv_show)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+        onView(withId(R.id.rv_tv_show)).perform(
+            RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
+                0,
+                click()
+            )
+        )
         onView(withId(R.id.tv_tvshow_deskripsi)).check(matches(isDisplayed()))
         onView(withId(R.id.tv_tvshow_deskripsi)).check(matches(withText(dataTvShow[0].description)))
         onView(withId(R.id.tv_tvshow_judul)).check(matches(isDisplayed()))

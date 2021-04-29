@@ -10,9 +10,9 @@ import com.puspawahyuningtias.metv.R
 import com.puspawahyuningtias.metv.data.Movies
 import com.puspawahyuningtias.metv.databinding.ItemBinding
 import com.puspawahyuningtias.metv.ui.movies.detail.DetailMoviesActivity
-import java.util.ArrayList
+import java.util.*
 
-class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.ListViewHolder>(){
+class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.ListViewHolder>() {
     private var listMovies = ArrayList<Movies>()
 
     fun setMovies(movies: List<Movies>?) {
@@ -22,7 +22,8 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.ListViewHolder>(){
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        val itemsMoviesBinding = ItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val itemsMoviesBinding =
+            ItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ListViewHolder(itemsMoviesBinding)
     }
 
@@ -41,11 +42,12 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.ListViewHolder>(){
                 tvItemDescription.text = movies.description
                 tvItemTahun.text = movies.tahun
                 Glide.with(itemView.context)
-                        .load(movies.photo)
-                        .apply(
-                            RequestOptions.placeholderOf(R.drawable.ic_loading)
-                                .error(R.drawable.ic_error))
-                        .into(imgItemPhoto)
+                    .load(movies.photo)
+                    .apply(
+                        RequestOptions.placeholderOf(R.drawable.ic_loading)
+                            .error(R.drawable.ic_error)
+                    )
+                    .into(imgItemPhoto)
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, DetailMoviesActivity::class.java)
                     intent.putExtra(DetailMoviesActivity.EXTRA_MOVIES, movies.judul)

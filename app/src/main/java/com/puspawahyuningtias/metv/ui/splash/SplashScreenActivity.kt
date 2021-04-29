@@ -1,8 +1,8 @@
 package com.puspawahyuningtias.metv.ui.splash
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.puspawahyuningtias.metv.R
 import com.puspawahyuningtias.metv.ui.main.MainActivity
 

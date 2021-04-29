@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.puspawahyuningtias.metv.data.DataFilm
 import com.puspawahyuningtias.metv.data.Movies
 
-class DetailMoviesViewModel: ViewModel()  {
+class DetailMoviesViewModel : ViewModel() {
     private lateinit var judul: String
 
     fun setSelectedMovies(judul: String) {
