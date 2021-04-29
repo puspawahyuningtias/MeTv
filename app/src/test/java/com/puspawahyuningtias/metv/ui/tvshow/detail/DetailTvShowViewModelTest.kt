@@ -26,5 +26,6 @@ class DetailTvShowViewModelTest{
         assertEquals(dataTvShow.description, tvShow.description)
         assertEquals(dataTvShow.photo, tvShow.photo)
         assertEquals(dataTvShow.tahun, tvShow.tahun)
+        assertEquals(dataTvShow.genre, tvShow.genre)
     }
 }

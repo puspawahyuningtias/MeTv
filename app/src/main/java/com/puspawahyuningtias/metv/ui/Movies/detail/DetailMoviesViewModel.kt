@@ -7,8 +7,8 @@ import com.puspawahyuningtias.metv.data.Movies
 class DetailMoviesViewModel: ViewModel()  {
     private lateinit var name: String
 
-    fun setSelectedMovies(courseId: String) {
-        this.name = courseId
+    fun setSelectedMovies(name: String) {
+        this.name = name
     }
 
     fun getMovies(): Movies {

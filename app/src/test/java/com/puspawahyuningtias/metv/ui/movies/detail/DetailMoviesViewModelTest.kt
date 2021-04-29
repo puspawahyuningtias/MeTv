@@ -26,5 +26,6 @@ class DetailMoviesViewModelTest {
         assertEquals(dataMovie.description, movies.description)
         assertEquals(dataMovie.photo, movies.photo)
         assertEquals(dataMovie.tahun, movies.tahun)
+        assertEquals(dataMovie.genre, movies.genre)
     }
 }

@@ -42,6 +42,7 @@ class DetailMoviesActivity : AppCompatActivity() {
         binding.tvJudul.text = movies.name
         binding.tvTahun.text = movies.tahun.toString()
         binding.tvDeskripsi.text = movies.description
+        binding.tvGenre.text = movies.genre
         Glide.with(this)
             .load(movies.photo)
             .transform(RoundedCorners(20))

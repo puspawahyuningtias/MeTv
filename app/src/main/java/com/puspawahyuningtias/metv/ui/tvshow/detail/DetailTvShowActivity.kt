@@ -42,6 +42,7 @@ class DetailTvShowActivity : AppCompatActivity() {
         binding.tvJudul.text = tvShow.name
         binding.tvTahun.text = tvShow.tahun.toString()
         binding.tvDeskripsi.text = tvShow.description
+        binding.tvGenre.text = tvShow.genre
         Glide.with(this)
             .load(tvShow.photo)
             .transform(RoundedCorners(20))
