@@ -19,25 +19,25 @@
             android:contentDescription="@string/poster" />
 
         <TextView
-            android:id="@+id/tv_movies_judul"
+            android:id="@+id/tv_movies_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
-            android:text="@string/judul"
+            android:text="@string/title"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_movies_tahun"
+            android:id="@+id/tv_movies_year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="@string/tahun"
+            android:text="@string/year"
             android:textStyle="bold" />
 
         <TextView

@@ -29,11 +29,11 @@
             tools:text="@string/title" />
 
         <TextView
-            android:id="@+id/tv_item_tahun"
+            android:id="@+id/tv_item_year"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginBottom="8dp"
-            android:text="@string/tahun" />
+            android:text="@string/year" />
 
         <TextView
             android:id="@+id/tv_item_description"

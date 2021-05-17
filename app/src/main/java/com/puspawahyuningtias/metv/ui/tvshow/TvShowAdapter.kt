@@ -16,9 +16,10 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.ListViewHolder>() {
     private var listTvShow = ArrayList<TvShow>()
 
     fun setTvShow(TvShow: List<TvShow>?) {
-        if (TvShow == null) return
+        if (TvShow.isNullOrEmpty()) return
         this.listTvShow.clear()
         this.listTvShow.addAll(TvShow)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -38,9 +39,9 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.ListViewHolder>() {
     class ListViewHolder(private val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(tvShow: TvShow) {
             with(binding) {
-                tvItemName.text = tvShow.judul
+                tvItemName.text = tvShow.title
                 tvItemDescription.text = tvShow.description
-                tvItemTahun.text = tvShow.tahun
+                tvItemYear.text = tvShow.year
                 Glide.with(itemView.context)
                     .load(tvShow.photo)
                     .apply(
@@ -49,8 +50,8 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.ListViewHolder>() {
                     )
                     .into(imgItemPhoto)
                 itemView.setOnClickListener {
-                    val intent = Intent(itemView.context, DetailTvShowActivity::class.java)
-                    intent.putExtra(DetailTvShowActivity.EXTRA_TVSHOW, tvShow.judul)
+                    val intent = Intent(it.context, DetailTvShowActivity::class.java)
+                    intent.putExtra(DetailTvShowActivity.EXTRA_TVSHOW, tvShow.title)
                     itemView.context.startActivity(intent)
                 }
             }

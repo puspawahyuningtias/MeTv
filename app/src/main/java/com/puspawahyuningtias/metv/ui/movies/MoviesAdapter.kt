@@ -16,9 +16,10 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.ListViewHolder>() {
     private var listMovies = ArrayList<Movies>()
 
     fun setMovies(movies: List<Movies>?) {
-        if (movies == null) return
+        if (movies.isNullOrEmpty()) return
         this.listMovies.clear()
         this.listMovies.addAll(movies)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -38,9 +39,9 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.ListViewHolder>() {
     class ListViewHolder(private val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(movies: Movies) {
             with(binding) {
-                tvItemName.text = movies.judul
+                tvItemName.text = movies.title
                 tvItemDescription.text = movies.description
-                tvItemTahun.text = movies.tahun
+                tvItemYear.text = movies.year
                 Glide.with(itemView.context)
                     .load(movies.photo)
                     .apply(
@@ -49,8 +50,8 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.ListViewHolder>() {
                     )
                     .into(imgItemPhoto)
                 itemView.setOnClickListener {
-                    val intent = Intent(itemView.context, DetailMoviesActivity::class.java)
-                    intent.putExtra(DetailMoviesActivity.EXTRA_MOVIES, movies.judul)
+                    val intent = Intent(it.context, DetailMoviesActivity::class.java)
+                    intent.putExtra(DetailMoviesActivity.EXTRA_MOVIES, movies.title)
                     itemView.context.startActivity(intent)
                 }
             }

@@ -39,12 +39,12 @@ class MainActivityTest {
         )
         onView(withId(R.id.tv_movies_deskripsi)).check(matches(isDisplayed()))
         onView(withId(R.id.tv_movies_deskripsi)).check(matches(withText(dataMovie[0].description)))
-        onView(withId(R.id.tv_movies_judul)).check(matches(isDisplayed()))
-        onView(withId(R.id.tv_movies_judul)).check(matches(withText(dataMovie[0].judul)))
+        onView(withId(R.id.tv_movies_title)).check(matches(isDisplayed()))
+        onView(withId(R.id.tv_movies_title)).check(matches(withText(dataMovie[0].title)))
         onView(withId(R.id.tv_movies_genre)).check(matches(isDisplayed()))
         onView(withId(R.id.tv_movies_genre)).check(matches(withText(dataMovie[0].genre)))
-        onView(withId(R.id.tv_movies_tahun)).check(matches(isDisplayed()))
-        onView(withId(R.id.tv_movies_tahun)).check(matches(withText(dataMovie[0].tahun)))
+        onView(withId(R.id.tv_movies_year)).check(matches(isDisplayed()))
+        onView(withId(R.id.tv_movies_year)).check(matches(withText(dataMovie[0].year)))
     }
 
     @Test
@@ -69,11 +69,11 @@ class MainActivityTest {
         )
         onView(withId(R.id.tv_tvshow_deskripsi)).check(matches(isDisplayed()))
         onView(withId(R.id.tv_tvshow_deskripsi)).check(matches(withText(dataTvShow[0].description)))
-        onView(withId(R.id.tv_tvshow_judul)).check(matches(isDisplayed()))
-        onView(withId(R.id.tv_tvshow_judul)).check(matches(withText(dataTvShow[0].judul)))
+        onView(withId(R.id.tv_tvshow_title)).check(matches(isDisplayed()))
+        onView(withId(R.id.tv_tvshow_title)).check(matches(withText(dataTvShow[0].title)))
         onView(withId(R.id.tv_tvshow_genre)).check(matches(isDisplayed()))
         onView(withId(R.id.tv_tvshow_genre)).check(matches(withText(dataTvShow[0].genre)))
-        onView(withId(R.id.tv_tvshow_tahun)).check(matches(isDisplayed()))
-        onView(withId(R.id.tv_tvshow_tahun)).check(matches(withText(dataTvShow[0].tahun)))
+        onView(withId(R.id.tv_tvshow_year)).check(matches(isDisplayed()))
+        onView(withId(R.id.tv_tvshow_year)).check(matches(withText(dataTvShow[0].year)))
     }
 }

@@ -29,18 +29,18 @@ class DetailTvShowActivity : AppCompatActivity() {
 
         val extras = intent.extras
         if (extras != null) {
-            val judul = extras.getString(EXTRA_TVSHOW)
-            if (judul != null) {
-                viewModel.setSelectedTvShow(judul)
+            val title = extras.getString(EXTRA_TVSHOW)
+            if (title != null) {
+                viewModel.setSelectedTvShow(title)
                 populateTvShow(viewModel.getTvShow())
             }
         }
     }
 
     private fun populateTvShow(tvShow: TvShow) {
-        supportActionBar?.title = tvShow.judul
-        binding.tvTvshowJudul.text = tvShow.judul
-        binding.tvTvshowTahun.text = tvShow.tahun
+        supportActionBar?.title = tvShow.title
+        binding.tvTvshowTitle.text = tvShow.title
+        binding.tvTvshowYear.text = tvShow.year
         binding.tvTvshowDeskripsi.text = tvShow.description
         binding.tvTvshowGenre.text = tvShow.genre
         Glide.with(this)

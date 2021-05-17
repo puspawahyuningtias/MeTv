@@ -9,23 +9,23 @@ import org.junit.Test
 class DetailTvShowViewModelTest {
     private lateinit var viewModel: DetailTvShowViewModel
     private val dataTvShow = DataFilm.generateTvShow()[0]
-    private val judul = dataTvShow.judul
+    private val title = dataTvShow.title
 
     @Before
     fun setUp() {
         viewModel = DetailTvShowViewModel()
-        viewModel.setSelectedTvShow(judul)
+        viewModel.setSelectedTvShow(title)
     }
 
     @Test
     fun getTvShow() {
-        viewModel.setSelectedTvShow(dataTvShow.judul)
+        viewModel.setSelectedTvShow(dataTvShow.title)
         val tvShow = viewModel.getTvShow()
         assertNotNull(tvShow)
-        assertEquals(dataTvShow.judul, tvShow.judul)
+        assertEquals(dataTvShow.title, tvShow.title)
         assertEquals(dataTvShow.description, tvShow.description)
         assertEquals(dataTvShow.photo, tvShow.photo)
-        assertEquals(dataTvShow.tahun, tvShow.tahun)
+        assertEquals(dataTvShow.year, tvShow.year)
         assertEquals(dataTvShow.genre, tvShow.genre)
     }
 }

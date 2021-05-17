@@ -9,23 +9,23 @@ import org.junit.Test
 class DetailMoviesViewModelTest {
     private lateinit var viewModel: DetailMoviesViewModel
     private val dataMovie = DataFilm.generateMovies()[0]
-    private val judul = dataMovie.judul
+    private val title = dataMovie.title
 
     @Before
     fun setUp() {
         viewModel = DetailMoviesViewModel()
-        viewModel.setSelectedMovies(judul)
+        viewModel.setSelectedMovies(title)
     }
 
     @Test
     fun getMovies() {
-        viewModel.setSelectedMovies(dataMovie.judul)
+        viewModel.setSelectedMovies(dataMovie.title)
         val movies = viewModel.getMovies()
         assertNotNull(movies)
-        assertEquals(dataMovie.judul, movies.judul)
+        assertEquals(dataMovie.title, movies.title)
         assertEquals(dataMovie.description, movies.description)
         assertEquals(dataMovie.photo, movies.photo)
-        assertEquals(dataMovie.tahun, movies.tahun)
+        assertEquals(dataMovie.year, movies.year)
         assertEquals(dataMovie.genre, movies.genre)
     }
 }
