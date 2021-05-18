@@ -38,9 +38,9 @@ class DetailMoviesActivity : AppCompatActivity() {
     }
 
     private fun populateMovies(movies: Movies) {
-        supportActionBar?.title = movies.judul
-        binding.tvMoviesJudul.text = movies.judul
-        binding.tvMoviesTahun.text = movies.tahun
+        supportActionBar?.title = movies.title
+        binding.tvMoviesTitle.text = movies.title
+        binding.tvMoviesYear.text = movies.year
         binding.tvMoviesDeskripsi.text = movies.description
         binding.tvMoviesGenre.text = movies.genre
         Glide.with(this)

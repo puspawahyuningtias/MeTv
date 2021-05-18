@@ -15,7 +15,7 @@ class DetailMoviesViewModel : ViewModel() {
         lateinit var movies: Movies
         val dataMovies = DataFilm.generateMovies()
         for (dataMovie in dataMovies) {
-            if (dataMovie.judul == judul) {
+            if (dataMovie.title == judul) {
                 movies = dataMovie
             }
         }

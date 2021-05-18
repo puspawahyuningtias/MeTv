@@ -1,0 +1,25 @@
+package com.puspawahyuningtias.metv.data
+
+import android.icu.number.Precision.increment
+import android.os.Handler
+import android.os.Looper
+import com.puspawahyuningtias.metv.utils.EspressoIdlingResource
+import javax.security.auth.callback.Callback
+
+object RemoteDataSource {
+    fun getMovies(callback: LoadMovies) {
+        EspressoIdlingResource.increment()
+        Handler(Looper.getMainLooper()).postDelayed({
+            callback.getMovies(DataFilm.generateMovies())
+            EspressoIdlingResource.decrement()
+        }, 2000)
+    }
+
+    interface LoadMovies {
+        fun getMovies(movies: ArrayList<Movies>)
+    }
+
+    interface LoadTvShow {
+        fun getMovies(tvShow: List<TvShow>)
+    }
+}
