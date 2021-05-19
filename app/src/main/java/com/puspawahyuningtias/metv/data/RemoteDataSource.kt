@@ -20,6 +20,6 @@ object RemoteDataSource {
     }
 
     interface LoadTvShow {
-        fun getMovies(tvShow: List<TvShow>)
+        fun getTvShow(tvShow: ArrayList<TvShow>)
     }
 }
