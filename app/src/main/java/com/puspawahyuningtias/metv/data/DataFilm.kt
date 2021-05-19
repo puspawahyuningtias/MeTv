@@ -4,8 +4,8 @@ import com.puspawahyuningtias.metv.R
 import java.util.*
 
 object DataFilm {
-    fun generateMovies(): ArrayList<Movies> {
-        val movies = ArrayList<Movies>()
+    fun generateMovies(): List<Movies> {
+        val movies = mutableListOf<Movies>()
 
         movies.add(
             Movies(

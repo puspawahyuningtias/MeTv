@@ -3,6 +3,7 @@ package com.puspawahyuningtias.metv.data
 import android.icu.number.Precision.increment
 import android.os.Handler
 import android.os.Looper
+import androidx.lifecycle.LiveData
 import com.puspawahyuningtias.metv.utils.EspressoIdlingResource
 import javax.security.auth.callback.Callback
 
@@ -16,7 +17,7 @@ object RemoteDataSource {
     }
 
     interface LoadMovies {
-        fun getMovies(movies: ArrayList<Movies>)
+        fun getMovies(movies: List<Movies>)
     }
 
     interface LoadTvShow {

@@ -1,5 +1,8 @@
 package com.puspawahyuningtias.metv.data
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+
 class FilmRepository : FilmDataSource {
     companion object {
         @Volatile
@@ -11,10 +14,11 @@ class FilmRepository : FilmDataSource {
             }
     }
 
-    val courseList = ArrayList<Movies>()
-    override fun getMovies(): ArrayList<Movies> {
+    override fun getMovies(): LiveData<List<Movies>> {
+        val courseResults = MutableLiveData<List<Movies>>()
         RemoteDataSource.getMovies(object : RemoteDataSource.LoadMovies {
-            override fun getMovies(movies: ArrayList<Movies>) {
+            override fun getMovies(movies: List<Movies>) {
+                val courseList = mutableListOf<Movies>()
                 for (response in movies) {
                     val course = Movies(
                         response.title,
@@ -25,8 +29,9 @@ class FilmRepository : FilmDataSource {
                     )
                     courseList.add(course)
                 }
+                courseResults.postValue(courseList)
             }
         })
-        return courseList
+        return courseResults
     }
 }
