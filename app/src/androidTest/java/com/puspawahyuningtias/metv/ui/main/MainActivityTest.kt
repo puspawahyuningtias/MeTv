@@ -21,6 +21,7 @@ class MainActivityTest {
 
     @Test
     fun loadMovies() {
+        delayTwoSecond()
         onView(withId(R.id.rv_movies)).check(matches(isDisplayed()))
         onView(withId(R.id.rv_movies)).perform(
             RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(
@@ -31,6 +32,7 @@ class MainActivityTest {
 
     @Test
     fun loadDetailFilm() {
+        delayTwoSecond()
         onView(withId(R.id.rv_movies)).perform(
             RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
                 0,
@@ -75,5 +77,12 @@ class MainActivityTest {
         onView(withId(R.id.tv_tvshow_genre)).check(matches(withText(dataTvShow[0].genre)))
         onView(withId(R.id.tv_tvshow_year)).check(matches(isDisplayed()))
         onView(withId(R.id.tv_tvshow_year)).check(matches(withText(dataTvShow[0].year)))
+    }
+    private fun delayTwoSecond() {
+        try {
+            Thread.sleep(3000)
+        } catch (e: InterruptedException) {
+            e.printStackTrace()
+        }
     }
 }
