@@ -7,8 +7,9 @@ import com.puspawahyuningtias.metv.data.FilmRepository
 import com.puspawahyuningtias.metv.data.Movies
 import com.puspawahyuningtias.metv.di.Injection
 import com.puspawahyuningtias.metv.ui.movies.MoviesViewModel
+import com.puspawahyuningtias.metv.ui.tvshow.TvShowViewModel
 
-class ViewModelFactory(private val mCatalogueRepository: FilmRepository)  :
+class ViewModelFactory(private val mfilmRepository: FilmRepository)  :
     ViewModelProvider.NewInstanceFactory() {
     companion object {
         @Volatile
@@ -24,7 +25,10 @@ class ViewModelFactory(private val mCatalogueRepository: FilmRepository)  :
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         when {
             modelClass.isAssignableFrom(MoviesViewModel::class.java) -> {
-                return MoviesViewModel(mCatalogueRepository) as T
+                return MoviesViewModel(mfilmRepository) as T
+            }
+            modelClass.isAssignableFrom(TvShowViewModel::class.java) -> {
+                return TvShowViewModel(mfilmRepository) as T
             }
             else -> throw Throwable("Unknown viewModel class: " + modelClass.name)
         }

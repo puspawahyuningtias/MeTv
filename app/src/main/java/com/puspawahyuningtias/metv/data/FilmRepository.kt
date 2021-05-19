@@ -34,4 +34,24 @@ class FilmRepository : FilmDataSource {
         })
         return courseResults
     }
+    override fun getTvShow(): LiveData<List<TvShow>> {
+        val tvShowResults = MutableLiveData<List<TvShow>>()
+        RemoteDataSource.getTvShow(object : RemoteDataSource.LoadTvShow {
+            override fun getTvShow(tvShow: List<TvShow>) {
+                val tvShowList = mutableListOf<TvShow>()
+                for (response in tvShow) {
+                    val course = TvShow(
+                        response.title,
+                        response.year,
+                        response.genre,
+                        response.description,
+                        response.photo
+                    )
+                    tvShowList.add(course)
+                }
+                tvShowResults.postValue(tvShowList)
+            }
+        })
+        return tvShowResults
+    }
 }

@@ -15,7 +15,7 @@ import java.util.*
 class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.ListViewHolder>() {
     private var listTvShow = ArrayList<TvShow>()
 
-    fun setTvShow(TvShow: List<TvShow>?) {
+    fun setTvShow(TvShow: List<TvShow>) {
         if (TvShow.isNullOrEmpty()) return
         this.listTvShow.clear()
         this.listTvShow.addAll(TvShow)
