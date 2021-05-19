@@ -23,9 +23,9 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.ListViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        val itemsAcademyBinding =
+        val itemsTvShowBinding =
             ItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ListViewHolder(itemsAcademyBinding)
+        return ListViewHolder(itemsTvShowBinding)
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {

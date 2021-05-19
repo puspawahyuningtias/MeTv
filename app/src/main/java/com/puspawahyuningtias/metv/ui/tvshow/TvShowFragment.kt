@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.puspawahyuningtias.metv.databinding.FragmentTvShowBinding
-import com.puspawahyuningtias.metv.ui.movies.MoviesViewModel
 import com.puspawahyuningtias.metv.viewModel.ViewModelFactory
 
 class TvShowFragment : Fragment() {

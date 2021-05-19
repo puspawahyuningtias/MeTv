@@ -80,6 +80,7 @@ class MainActivityTest {
         onView(withId(R.id.tv_tvshow_year)).check(matches(isDisplayed()))
         onView(withId(R.id.tv_tvshow_year)).check(matches(withText(dataTvShow[0].year)))
     }
+
     private fun delayThreeSecond() {
         try {
             Thread.sleep(3000)

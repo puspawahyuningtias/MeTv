@@ -1,11 +1,8 @@
 package com.puspawahyuningtias.metv.data
 
-import android.icu.number.Precision.increment
 import android.os.Handler
 import android.os.Looper
-import androidx.lifecycle.LiveData
 import com.puspawahyuningtias.metv.utils.EspressoIdlingResource
-import javax.security.auth.callback.Callback
 
 object RemoteDataSource {
     fun getMovies(callback: LoadMovies) {
@@ -15,6 +12,7 @@ object RemoteDataSource {
             EspressoIdlingResource.decrement()
         }, 2000)
     }
+
     fun getTvShow(callback: LoadTvShow) {
         EspressoIdlingResource.increment()
         Handler(Looper.getMainLooper()).postDelayed({

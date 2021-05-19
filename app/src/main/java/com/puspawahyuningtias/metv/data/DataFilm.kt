@@ -1,8 +1,6 @@
 package com.puspawahyuningtias.metv.data
 
 import com.puspawahyuningtias.metv.R
-import java.util.*
-import kotlin.collections.ArrayList
 
 object DataFilm {
     fun generateMovies(): List<Movies> {

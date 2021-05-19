@@ -8,6 +8,5 @@
     <string name="poster">Poster</string>
     <string name="genre">Genre</string>
     <string name="deskripsi">Deskripsi</string>
-    <string name="judul">Judul</string>
     <string name="deskripsi_singkat">Deskripsi Singkat :</string>
 </resources>

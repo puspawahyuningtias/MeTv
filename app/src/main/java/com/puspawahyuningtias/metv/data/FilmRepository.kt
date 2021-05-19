@@ -15,24 +15,24 @@ class FilmRepository : FilmDataSource {
     }
 
     override fun getMovies(): LiveData<List<Movies>> {
-        val courseResults = MutableLiveData<List<Movies>>()
+        val moviesResults = MutableLiveData<List<Movies>>()
         RemoteDataSource.getMovies(object : RemoteDataSource.LoadMovies {
             override fun getMovies(movies: List<Movies>) {
-                val courseList = mutableListOf<Movies>()
+                val moviesList = mutableListOf<Movies>()
                 for (response in movies) {
-                    val course = Movies(
+                    val movie = Movies(
                         response.title,
                         response.year,
                         response.genre,
                         response.description,
                         response.photo
                     )
-                    courseList.add(course)
+                    moviesList.add(movie)
                 }
-                courseResults.postValue(courseList)
+                moviesResults.postValue(moviesList)
             }
         })
-        return courseResults
+        return moviesResults
     }
     override fun getTvShow(): LiveData<List<TvShow>> {
         val tvShowResults = MutableLiveData<List<TvShow>>()
@@ -40,14 +40,14 @@ class FilmRepository : FilmDataSource {
             override fun getTvShow(tvShow: List<TvShow>) {
                 val tvShowList = mutableListOf<TvShow>()
                 for (response in tvShow) {
-                    val course = TvShow(
+                    val mTvShow = TvShow(
                         response.title,
                         response.year,
                         response.genre,
                         response.description,
                         response.photo
                     )
-                    tvShowList.add(course)
+                    tvShowList.add(mTvShow)
                 }
                 tvShowResults.postValue(tvShowList)
             }
