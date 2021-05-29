@@ -9,6 +9,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.puspawahyuningtias.metv.R
 import com.puspawahyuningtias.metv.data.Movies
 import com.puspawahyuningtias.metv.databinding.ActivityDetailMoviesBinding
+import com.puspawahyuningtias.metv.viewModel.ViewModelFactory
 
 class DetailMoviesActivity : AppCompatActivity() {
     companion object {
@@ -22,9 +23,10 @@ class DetailMoviesActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        val factory = ViewModelFactory.getInstance()
         val viewModel = ViewModelProvider(
             this,
-            ViewModelProvider.NewInstanceFactory()
+            factory
         )[DetailMoviesViewModel::class.java]
 
         val extras = intent.extras
@@ -32,7 +34,16 @@ class DetailMoviesActivity : AppCompatActivity() {
             val judul = extras.getString(EXTRA_MOVIES)
             if (judul != null) {
                 viewModel.setSelectedMovies(judul)
-                populateMovies(viewModel.getMovies())
+                viewModel.getMovies().observe(this, {
+                    lateinit var movies: Movies
+                    val dataMovies = it
+                    for (dataMovie in dataMovies) {
+                        if (dataMovie.title == judul) {
+                            movies = dataMovie
+                            populateMovies(movies)
+                        }
+                    }
+                })
             }
         }
     }

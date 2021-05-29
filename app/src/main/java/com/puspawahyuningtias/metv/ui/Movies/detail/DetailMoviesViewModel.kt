@@ -1,24 +1,18 @@
 package com.puspawahyuningtias.metv.ui.movies.detail
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.puspawahyuningtias.metv.data.DataFilm
+import com.puspawahyuningtias.metv.data.FilmRepository
 import com.puspawahyuningtias.metv.data.Movies
 
-class DetailMoviesViewModel : ViewModel() {
+class DetailMoviesViewModel(private val filmRepository: FilmRepository) : ViewModel() {
     private lateinit var judul: String
 
     fun setSelectedMovies(judul: String) {
         this.judul = judul
     }
-
-    fun getMovies(): Movies {
-        lateinit var movies: Movies
-        val dataMovies = DataFilm.generateMovies()
-        for (dataMovie in dataMovies) {
-            if (dataMovie.title == judul) {
-                movies = dataMovie
-            }
-        }
-        return movies
+    fun getMovies(): LiveData<List<Movies>> {
+        return filmRepository.getMovies()
     }
 }
+
