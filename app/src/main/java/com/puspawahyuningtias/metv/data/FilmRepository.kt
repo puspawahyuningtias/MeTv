@@ -54,4 +54,26 @@ class FilmRepository : FilmDataSource {
         })
         return tvShowResults
     }
+
+//    override fun getMoviesByJudul(judul: String): LiveData<List<Movies>> {
+//        val moviesResults = MutableLiveData<List<Movies>>()
+//        RemoteDataSource.getMoviesByJudul(judul, object : RemoteDataSource.LoadMoviesByJudul {
+//            override fun getMoviesByJudul(judul:String, movies: List<Movies>) {
+//                val moviesList = mutableListOf<Movies>()
+//                for (response in movies) {
+//                    val movie = Movies(
+//                        response.title,
+//                        response.year,
+//                        response.genre,
+//                        response.description,
+//                        response.photo
+//                    )
+//                    moviesList.add(movie)
+//                }
+//                moviesResults.postValue(moviesList)
+//            }
+//        })
+//        return moviesResults
+//    }
+
 }

@@ -12,6 +12,13 @@ object RemoteDataSource {
             EspressoIdlingResource.decrement()
         }, 2000)
     }
+    fun getMoviesByJudul(judul:String,callback: LoadMoviesByJudul) {
+        EspressoIdlingResource.increment()
+        Handler(Looper.getMainLooper()).postDelayed({
+            callback.getMoviesByJudul(DataFilm.generateMovies())
+            EspressoIdlingResource.decrement()
+        }, 2000)
+    }
 
     fun getTvShow(callback: LoadTvShow) {
         EspressoIdlingResource.increment()
@@ -23,6 +30,10 @@ object RemoteDataSource {
 
     interface LoadMovies {
         fun getMovies(movies: List<Movies>)
+    }
+
+    interface LoadMoviesByJudul {
+        fun getMoviesByJudul(movies: List<Movies>)
     }
 
     interface LoadTvShow {

@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.puspawahyuningtias.metv.data.FilmRepository
 import com.puspawahyuningtias.metv.di.Injection
 import com.puspawahyuningtias.metv.ui.movies.MoviesViewModel
+import com.puspawahyuningtias.metv.ui.movies.detail.DetailMoviesViewModel
 import com.puspawahyuningtias.metv.ui.tvshow.TvShowViewModel
 
 class ViewModelFactory(private val mfilmRepository: FilmRepository) :
@@ -25,6 +26,9 @@ class ViewModelFactory(private val mfilmRepository: FilmRepository) :
         return when {
             modelClass.isAssignableFrom(MoviesViewModel::class.java) -> {
                 MoviesViewModel(mfilmRepository) as T
+            }
+            modelClass.isAssignableFrom(DetailMoviesViewModel::class.java) -> {
+                DetailMoviesViewModel(mfilmRepository) as T
             }
             modelClass.isAssignableFrom(TvShowViewModel::class.java) -> {
                 TvShowViewModel(mfilmRepository) as T
