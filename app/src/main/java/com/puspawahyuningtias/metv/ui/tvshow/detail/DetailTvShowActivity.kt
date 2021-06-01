@@ -9,6 +9,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.puspawahyuningtias.metv.R
 import com.puspawahyuningtias.metv.data.TvShow
 import com.puspawahyuningtias.metv.databinding.ActivityDetailTvShowBinding
+import com.puspawahyuningtias.metv.viewModel.ViewModelFactory
 
 class DetailTvShowActivity : AppCompatActivity() {
     companion object {
@@ -22,17 +23,27 @@ class DetailTvShowActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        val factory = ViewModelFactory.getInstance()
         val viewModel = ViewModelProvider(
             this,
-            ViewModelProvider.NewInstanceFactory()
+            factory
         )[DetailTvShowViewModel::class.java]
 
         val extras = intent.extras
         if (extras != null) {
-            val title = extras.getString(EXTRA_TVSHOW)
-            if (title != null) {
-                viewModel.setSelectedTvShow(title)
-                populateTvShow(viewModel.getTvShow())
+            val judul = extras.getString(EXTRA_TVSHOW)
+            if (judul != null) {
+                viewModel.setSelectedTvShow(judul)
+                viewModel.getTvShow().observe(this, {
+                    lateinit var tvShow: TvShow
+                    val dataTvShow = it
+                    for (data in dataTvShow) {
+                        if (data.title == judul) {
+                            tvShow = data
+                            populateTvShow(tvShow)
+                        }
+                    }
+                })
             }
         }
     }

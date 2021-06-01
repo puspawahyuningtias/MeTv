@@ -7,6 +7,7 @@ import com.puspawahyuningtias.metv.di.Injection
 import com.puspawahyuningtias.metv.ui.movies.MoviesViewModel
 import com.puspawahyuningtias.metv.ui.movies.detail.DetailMoviesViewModel
 import com.puspawahyuningtias.metv.ui.tvshow.TvShowViewModel
+import com.puspawahyuningtias.metv.ui.tvshow.detail.DetailTvShowViewModel
 
 class ViewModelFactory(private val mfilmRepository: FilmRepository) :
     ViewModelProvider.NewInstanceFactory() {
@@ -32,6 +33,9 @@ class ViewModelFactory(private val mfilmRepository: FilmRepository) :
             }
             modelClass.isAssignableFrom(TvShowViewModel::class.java) -> {
                 TvShowViewModel(mfilmRepository) as T
+            }
+            modelClass.isAssignableFrom(DetailTvShowViewModel::class.java) -> {
+                DetailTvShowViewModel(mfilmRepository) as T
             }
             else -> throw Throwable("Unknown viewModel class: " + modelClass.name)
         }
