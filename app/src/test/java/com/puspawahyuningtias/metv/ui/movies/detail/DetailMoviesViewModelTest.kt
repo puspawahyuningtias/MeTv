@@ -47,14 +47,14 @@ class DetailMoviesViewModelTest {
         movies.value = dummyMovies
 
         `when`(filmRepository.getMovies()).thenReturn(movies)
-        val courseEntity = viewModel.getMovies().value
+        val MovieEntitiy = viewModel.getMovies().value
         verify(filmRepository).getMovies()
-        assertNotNull(courseEntity)
-        assertEquals(dataMovies.title, courseEntity?.get(0)?.title)
-        assertEquals(dataMovies.description, courseEntity?.get(0)?.description)
-        assertEquals(dataMovies.photo, courseEntity?.get(0)?.photo)
-        assertEquals(dataMovies.year, courseEntity?.get(0)?.year)
-        assertEquals(dataMovies.genre, courseEntity?.get(0)?.genre)
+        assertNotNull(MovieEntitiy)
+        assertEquals(dataMovies.title, MovieEntitiy?.get(0)?.title)
+        assertEquals(dataMovies.description, MovieEntitiy?.get(0)?.description)
+        assertEquals(dataMovies.photo, MovieEntitiy?.get(0)?.photo)
+        assertEquals(dataMovies.year, MovieEntitiy?.get(0)?.year)
+        assertEquals(dataMovies.genre, MovieEntitiy?.get(0)?.genre)
 
         viewModel.getMovies().observeForever(observer)
         verify(observer).onChanged((dummyMovies))
